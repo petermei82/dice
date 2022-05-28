@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>骰子小遊戲</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="dice dice1">
+            <div class="object p6">
+                <div class="point"></div>
+            </div>
+        </div>
+        <div class="dice dice2">
+            <div class="object p6">
+                <div class="point"></div>
+            </div>
+        </div>
+        <div class="dice dice3">
+            <div class="object p6">
+                <div class="point"></div>
+            </div>
+        </div>
+        <button class="start">開始擲</button>
+        <br>
+        <div class="result">
+            <div class="result1"></div>
+            <div class="result2"></div>
+            <div class="result3"></div>
+            <div class="result-all"></div>
+        </div>
+    </div>
+
+
+    <script>
+        let start = document.querySelector('.start');
+        let result = document.querySelector('.result');
+        let result1 = document.querySelector('.result1');
+        let result2 = document.querySelector('.result2');
+        let result3 = document.querySelector('.result3');
+        let resultAll = document.querySelector('.result-all');
+
+        let dice_1 = document.querySelector('.dice1');
+        let dice_2 = document.querySelector('.dice2');
+        let dice_3 = document.querySelector('.dice3');
+        start.addEventListener('click', function () {
+            result1.innerHTML = '';
+            result2.innerHTML = '';
+            result3.innerHTML = '';
+            resultAll.innerHTML = '';
+            i = 0;
+            do {
+                i++
+                if (i > 10) {
+                    break;
+                }
+                dice1 = Math.floor(Math.random() * 6 + 1);;
+                dice2 = Math.floor(Math.random() * 6 + 1);;
+                dice3 = Math.floor(Math.random() * 6 + 1);;
+
+                result1.innerHTML += dice1 + '<br>';
+                result2.innerHTML += dice2 + '<br>';
+                result3.innerHTML += dice3 + '<br>';
+                resultAll.innerHTML = '第' + i + '次';
+
+                dice_1.innerHTML = `<div class="object p${dice1}"><div class="point"></div></div>`;
+                dice_2.innerHTML = `<div class="object p${dice2}"><div class="point"></div></div>`;
+                dice_3.innerHTML = `<div class="object p${dice3}"><div class="point"></div></div>`;
+
+            } while (dice1 != dice2 || dice2 != dice3 || dice1 != dice3);
+        });
+    </script>
+</body>
+
+</html>

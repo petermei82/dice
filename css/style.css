@@ -1,0 +1,356 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: Microsoft JhengHei;
+}
+
+body {
+  margin: 0px;
+  padding: 0px;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  background-color: skyblue;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding: 50px;
+  position: relative;
+}
+
+.container .dice {
+  margin-right: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container .dice .object {
+  width: 200px;
+  height: 200px;
+  background-color: white;
+  border-radius: 20px;
+  position: relative;
+}
+
+.container .dice .object .point {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-color: black;
+  border-radius: 50%;
+}
+
+.container .dice .p6 .point {
+  top: 35px;
+  left: 50px;
+  -webkit-box-shadow: 60px 0px black;
+          box-shadow: 60px 0px black;
+}
+
+.container .dice .p6 .point::before {
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-color: black;
+  border-radius: 50%;
+  top: 50px;
+  left: 0px;
+  -webkit-box-shadow: 60px 0px black;
+          box-shadow: 60px 0px black;
+}
+
+.container .dice .p6 .point::after {
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-color: black;
+  border-radius: 50%;
+  top: 100px;
+  left: 0px;
+  -webkit-box-shadow: 60px 0px black;
+          box-shadow: 60px 0px black;
+}
+
+.container .dice .p5 .point {
+  top: 85px;
+  left: 85px;
+}
+
+.container .dice .p5 .point::before {
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-color: black;
+  border-radius: 50%;
+  top: -50px;
+  left: -50px;
+  -webkit-box-shadow: 100px 0px black;
+          box-shadow: 100px 0px black;
+}
+
+.container .dice .p5 .point::after {
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-color: black;
+  border-radius: 50%;
+  top: 50px;
+  left: -50px;
+  -webkit-box-shadow: 100px 0px black;
+          box-shadow: 100px 0px black;
+}
+
+.container .dice .p4 .point {
+  background-color: red;
+  top: 35px;
+  left: 35px;
+  -webkit-box-shadow: 95px 95px red;
+          box-shadow: 95px 95px red;
+}
+
+.container .dice .p4 .point::before {
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-color: red;
+  border-radius: 50%;
+  top: 0px;
+  left: 95px;
+}
+
+.container .dice .p4 .point::after {
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-color: red;
+  border-radius: 50%;
+  top: 95px;
+  left: 0px;
+}
+
+.container .dice .p3 .point {
+  top: 35px;
+  left: 35px;
+}
+
+.container .dice .p3 .point::before {
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-color: black;
+  border-radius: 50%;
+  top: 50px;
+  left: 50px;
+}
+
+.container .dice .p3 .point::after {
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-color: black;
+  border-radius: 50%;
+  top: 95px;
+  left: 95px;
+}
+
+.container .dice .p2 .point {
+  top: 35px;
+  left: 35px;
+}
+
+.container .dice .p2 .point::after {
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-color: black;
+  border-radius: 50%;
+  top: 95px;
+  left: 95px;
+}
+
+.container .dice .p1 .point {
+  background-color: red;
+  top: 85px;
+  left: 85px;
+}
+
+.container .dice .shake {
+  -webkit-animation: shake 0.5s;
+          animation: shake 0.5s;
+  -webkit-animation-iteration-count: 5;
+          animation-iteration-count: 5;
+}
+
+@-webkit-keyframes shake {
+  0% {
+    -webkit-transform: translate(1px, 1px) rotate(0deg);
+            transform: translate(1px, 1px) rotate(0deg);
+  }
+  10% {
+    -webkit-transform: translate(-1px, -2px) rotate(-1deg);
+            transform: translate(-1px, -2px) rotate(-1deg);
+  }
+  20% {
+    -webkit-transform: translate(-3px, 0px) rotate(1deg);
+            transform: translate(-3px, 0px) rotate(1deg);
+  }
+  30% {
+    -webkit-transform: translate(3px, 2px) rotate(0deg);
+            transform: translate(3px, 2px) rotate(0deg);
+  }
+  40% {
+    -webkit-transform: translate(1px, -1px) rotate(1deg);
+            transform: translate(1px, -1px) rotate(1deg);
+  }
+  50% {
+    -webkit-transform: translate(-1px, 2px) rotate(-1deg);
+            transform: translate(-1px, 2px) rotate(-1deg);
+  }
+  60% {
+    -webkit-transform: translate(-3px, 1px) rotate(0deg);
+            transform: translate(-3px, 1px) rotate(0deg);
+  }
+  70% {
+    -webkit-transform: translate(3px, 1px) rotate(-1deg);
+            transform: translate(3px, 1px) rotate(-1deg);
+  }
+  80% {
+    -webkit-transform: translate(-1px, -1px) rotate(1deg);
+            transform: translate(-1px, -1px) rotate(1deg);
+  }
+  90% {
+    -webkit-transform: translate(1px, 2px) rotate(0deg);
+            transform: translate(1px, 2px) rotate(0deg);
+  }
+  100% {
+    -webkit-transform: translate(1px, -2px) rotate(-1deg);
+            transform: translate(1px, -2px) rotate(-1deg);
+  }
+}
+
+@keyframes shake {
+  0% {
+    -webkit-transform: translate(1px, 1px) rotate(0deg);
+            transform: translate(1px, 1px) rotate(0deg);
+  }
+  10% {
+    -webkit-transform: translate(-1px, -2px) rotate(-1deg);
+            transform: translate(-1px, -2px) rotate(-1deg);
+  }
+  20% {
+    -webkit-transform: translate(-3px, 0px) rotate(1deg);
+            transform: translate(-3px, 0px) rotate(1deg);
+  }
+  30% {
+    -webkit-transform: translate(3px, 2px) rotate(0deg);
+            transform: translate(3px, 2px) rotate(0deg);
+  }
+  40% {
+    -webkit-transform: translate(1px, -1px) rotate(1deg);
+            transform: translate(1px, -1px) rotate(1deg);
+  }
+  50% {
+    -webkit-transform: translate(-1px, 2px) rotate(-1deg);
+            transform: translate(-1px, 2px) rotate(-1deg);
+  }
+  60% {
+    -webkit-transform: translate(-3px, 1px) rotate(0deg);
+            transform: translate(-3px, 1px) rotate(0deg);
+  }
+  70% {
+    -webkit-transform: translate(3px, 1px) rotate(-1deg);
+            transform: translate(3px, 1px) rotate(-1deg);
+  }
+  80% {
+    -webkit-transform: translate(-1px, -1px) rotate(1deg);
+            transform: translate(-1px, -1px) rotate(1deg);
+  }
+  90% {
+    -webkit-transform: translate(1px, 2px) rotate(0deg);
+            transform: translate(1px, 2px) rotate(0deg);
+  }
+  100% {
+    -webkit-transform: translate(1px, -2px) rotate(-1deg);
+            transform: translate(1px, -2px) rotate(-1deg);
+  }
+}
+
+.container .none {
+  display: none;
+}
+
+.container .start {
+  height: 50px;
+  width: 200px;
+}
+
+.container .result {
+  width: 640px;
+  height: 300px;
+  background-color: antiquewhite;
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  top: 300px;
+  left: 50px;
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.container .result .result1 {
+  height: 300px;
+  width: 200px;
+  margin-right: 20px;
+}
+
+.container .result .result2 {
+  height: 300px;
+  width: 200px;
+  margin-right: 20px;
+}
+
+.container .result .result3 {
+  height: 300px;
+  width: 200px;
+}
+
+.container .result .result-all {
+  width: 640px;
+  height: 50px;
+  position: absolute;
+  bottom: -70px;
+  left: 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+/*# sourceMappingURL=style.css.map */
